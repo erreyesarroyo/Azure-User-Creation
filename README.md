@@ -1,33 +1,11 @@
 # Azure-User-Creation version 2 (User Creation on Personal Account)
-#As seen below this is step one next steps are how to manipulate middle initials, add the user to a group, and with a switch statement other stuff. 
 
-# Connect to Azure
-Connect-AzAccount
+# Current Capability
+Create one or multiple users recursively with only entering first name and last name. Prior to adoption must review variables for applicability and relevancy.
 
-# Prompt for the number of users to create
-$userCount = Read-Host -Prompt "Enter the number of users to create"
-
-# Loop to create multicleaple users
-for ($i = 1; $i -le $userCount; $i++) {
-    Write-Host "Creating User $i"
-
-    # Prompt for user details
-    $firstName = Read-Host -Prompt "Enter the first name of User $i"
-    $lastName = Read-Host -Prompt "Enter the last name of User $i"
-    $displayName = "$firstName $lastName"
-    $password = Read-Host -Prompt "Enter the password for User (https://lazyadmin.nl/office-365/azure-ad-password-policy/) $i" -AsSecureString
-    #next step use auto generate 
-    #nect step auto email encripted with org encripted standards
-    $Domain = "@kickingtires.onmicrosoft.com"
-    $MailNickName = "$firstName.$lastName"
-    $UPN = "$firstName.$lastName$Domain"
-   
-
-    # Create the user
-    New-AzADUser -DisplayName $displayName -UserPrincipalName $UPN -UserType Member -Password $password -MailNickname $MailNickName 
-
-    # Output success message
-    Write-Host "User $i created successfully!"
-}
+# Way ahead (MTF)
+Plan to add randomization on password. 
+Plan to add script portion to add user to group.
+Plan to add switch statement for delete user.
 
 
