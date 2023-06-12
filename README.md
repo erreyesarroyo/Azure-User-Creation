@@ -1,4 +1,4 @@
-# Azure-User-Creation version 1 (User Creation on Personal Account)
+# Azure-User-Creation version 2 (User Creation on Personal Account)
 #As seen below this is step one next steps are how to manipulate middle initials, add the user to a group, and with a switch statement other stuff. 
 
 # Connect to Azure
@@ -29,4 +29,5 @@ for ($i = 1; $i -le $userCount; $i++) {
     # Output success message
     Write-Host "User $i created successfully!"
 }
+
 
